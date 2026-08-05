@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Клуб графического дизайна — Pulse Atelier</title>
+  <meta name="description" content="Одностраничный сайт клуба графического дизайна с живыми сценическими анимациями и интерактивной главной сценой." />
+  <link rel="stylesheet" href="styles.css?v=20260805-content-fix2" />
+</head>
+<body class="page-home">
+  <div class="background-media" aria-hidden="true">
+    <video class="liquid-bg scene-video" autoplay muted loop playsinline preload="metadata" poster="media/main-bg-poster.jpg?v=20260330-mainbgrefresh1" tabindex="-1">
+      <source src="media/main-bg-web.mp4?v=20260805-video-fix1" type="video/mp4" />
+    </video>
+    <div class="liquid-poster" aria-hidden="true" style="background-image: url('media/main-bg-poster.jpg?v=20260330-mainbgrefresh1');"></div>
+    <div class="liquid-overlay"></div>
+    <div class="noise"></div>
+  </div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <nav class="route-map route-map-home" aria-label="Маршрут сайта">
+    <a class="route-map-item is-active" href="index.html" aria-current="page">
+      <span class="route-map-index">00</span>
+      <span class="route-map-label">вход</span>
+    </a>
+    <a class="route-map-item" href="kto-my.html">
+      <span class="route-map-index">01</span>
+      <span class="route-map-label">кто мы</span>
+    </a>
+    <a class="route-map-item" href="chto-my-delaem.html">
+      <span class="route-map-index">02</span>
+      <span class="route-map-label">что делаем</span>
+    </a>
+    <a class="route-map-item" href="kak-naiti.html">
+      <span class="route-map-index">03</span>
+      <span class="route-map-label">как найти</span>
+    </a>
+  </nav>
+
+  <main class="page-main">
+    <section id="hero" class="panel container reveal" data-tone="calm">
+      <article class="frame frame-grid home-hero-frame">
+        <div class="home-hero-aura" aria-hidden="true"></div>
+        <div class="home-hero-grid" aria-hidden="true"></div>
+        <div class="home-hero-topline motion-fade" aria-label="Клуб графического дизайна">
+          <span>клуб графического дизайна</span>
+        </div>
+        <p class="home-kicker motion-fade">мы</p>
+        <p class="home-hero-footnote home-hero-footnote-struck motion-fade">сборище гиперфиксов</p>
+        <div class="home-club-wrap">
+          <h1 class="home-club motion-fade" aria-label="И каждую встречу мы идём...">
+            <span class="home-club-line">и каждую</span>
+            <span class="home-club-line">встречу мы</span>
+            <span class="home-club-line home-club-line-shift">идём...</span>
+          </h1>
+        </div>
+        <div class="home-signal-stack" aria-label="Сцены клуба">
+          <button class="home-signal motion-word is-active" type="button" data-color="#ff8a4c" data-copy="Включаем фильм, ловим ритм кадра и сразу обсуждаем, что сработало сильнее всего.">
+            <span class="home-signal-index">01</span>
+            <span class="home-signal-title">смотреть вместе</span>
+          </button>
+          <button class="home-signal motion-word" type="button" data-color="#5ab7ff" data-copy="Отмечаем типографику, пластику, свет и композицию, чтобы видеть не только сюжет, но и устройство.">
+            <span class="home-signal-index">02</span>
+            <span class="home-signal-title">разбирать форму</span>
+          </button>
+          <button class="home-signal motion-word" type="button" data-color="#d884ff" data-copy="После просмотра пробуем собственный жест: набросок, афишу, титр или новый визуальный ход.">
+            <span class="home-signal-index">03</span>
+            <span class="home-signal-title">делать свою версию</span>
+          </button>
+        </div>
+        <div class="home-signal-caption" aria-live="polite">
+          <p class="home-signal-label motion-fade">сейчас в фокусе</p>
+          <p class="home-signal-copy motion-fade" data-signal-output>Включаем фильм, ловим ритм кадра и сразу обсуждаем, что сработало сильнее всего.</p>
+        </div>
+        <a class="home-scroll-link motion-word" href="#footer-scene" data-color="#f5f2eb" aria-label="листать дальше"></a>
+      </article>
+    </section>
+
+    <section id="footer-scene" class="panel container reveal" data-tone="expressive">
+      <article class="frame frame-grid frame-grid-final home-final-frame">
+        <p class="home-final-mark motion-fade">/</p>
+        <div class="footer-title-wrap">
+          <h2 class="mega-word motion-heading-single">Д Е Л А Т Ь</h2>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="vendor/gsap/gsap.min.js"></script>
+  <script src="vendor/gsap/ScrollTrigger.min.js"></script>
+  <script src="script.js?v=20260805-video-fix1"></script>
+</body>
+</html>
