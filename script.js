@@ -677,20 +677,7 @@ function initVideoBackground() {
   liquidVideo.setAttribute('muted', '');
   liquidVideo.setAttribute('playsinline', '');
 
-  let settled = false;
-
-  const settleVideoState = (state, onSettle) => {
-    if (settled) {
-      return;
-    }
-
-    settled = true;
-    setBackgroundState(state);
-
-    if (typeof onSettle === 'function') {
-      onSettle();
-    }
-  };
+  let videoFailed = false;
 
   const requestPlayback = () => {
     const playPromise = liquidVideo.play();
@@ -701,7 +688,9 @@ function initVideoBackground() {
   };
 
   const fallbackTimer = window.setTimeout(() => {
-    settleVideoState('no-video');
+    if (!videoFailed && !dom.body.classList.contains('has-video')) {
+      setBackgroundState('no-video');
+    }
   }, 4000);
 
   const clearFallbackTimer = () => {
@@ -710,12 +699,13 @@ function initVideoBackground() {
 
   liquidVideo.addEventListener('playing', () => {
     clearFallbackTimer();
-    settleVideoState('has-video');
+    setBackgroundState('has-video');
   }, { once: true });
 
   liquidVideo.addEventListener('error', () => {
+    videoFailed = true;
     clearFallbackTimer();
-    settleVideoState('no-video');
+    setBackgroundState('no-video');
   }, { once: true });
 
   liquidVideo.addEventListener('canplay', requestPlayback, { once: true });
@@ -729,7 +719,7 @@ function initVideoBackground() {
       return;
     }
 
-    if (!settled || dom.body.classList.contains('has-video')) {
+    if (!videoFailed) {
       requestPlayback();
     }
   });
