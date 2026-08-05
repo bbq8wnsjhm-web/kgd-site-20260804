@@ -682,8 +682,15 @@ function initVideoBackground() {
   const requestPlayback = () => {
     const playPromise = liquidVideo.play();
 
-    if (playPromise && typeof playPromise.catch === 'function') {
-      playPromise.catch(() => {});
+    if (playPromise && typeof playPromise.then === 'function') {
+      playPromise
+        .then(() => setBackgroundState('has-video'))
+        .catch(() => {});
+      return;
+    }
+
+    if (!liquidVideo.paused && liquidVideo.readyState >= 2) {
+      setBackgroundState('has-video');
     }
   };
 
