@@ -533,8 +533,8 @@ h2 {
   grid-template-areas:
     "topline topline topline topline . . . . . . . ."
     "kicker kicker note note . . . . signal signal signal signal"
-    ". . club club club club club club signal signal signal signal"
-    ". . . . . . . . caption caption caption caption"
+    "club club club club club club club . signal signal signal signal"
+    ". friday friday friday friday friday friday . caption caption caption caption"
     "scroll scroll scroll . . . . . caption caption caption caption";
   grid-template-rows: auto auto auto minmax(0, 1fr) auto;
   row-gap: clamp(1rem, 2vw, 1.8rem);
@@ -589,6 +589,7 @@ h2 {
 .home-kicker,
 .home-hero-footnote,
 .home-club-wrap,
+.home-friday-wrap,
 .home-signal-stack,
 .home-signal-caption,
 .home-scroll-link,
@@ -671,6 +672,23 @@ h2 {
 
 .home-club-line-shift {
   margin-left: clamp(7.6rem, 14vw, 12rem);
+}
+
+.home-friday-wrap {
+  grid-area: friday;
+  transform: translate(calc(var(--hero-shift-x) * -0.12), calc(var(--hero-shift-y) * -0.05));
+  transition: transform 260ms ease;
+}
+
+.home-friday {
+  align-self: start;
+  margin: 0;
+  max-width: 11ch;
+  font-size: clamp(1.83rem, 3.4vw, 3.27rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  white-space: normal;
 }
 
 .home-signal-stack {
@@ -2054,6 +2072,7 @@ body.page-what p {
       "kicker kicker kicker kicker kicker kicker"
       "note note note note note note"
       "club club club club club club"
+      "friday friday friday friday friday friday"
       "signal signal signal signal signal signal"
       "caption caption caption caption caption caption"
       "scroll scroll scroll scroll scroll scroll";
@@ -2083,6 +2102,11 @@ body.page-what p {
 
   .home-club-line-shift {
     margin-left: min(5.8rem, 18vw);
+  }
+
+  .home-friday {
+    max-width: 10ch;
+    font-size: clamp(1.62rem, 4.93vw, 2.51rem);
   }
 
   .home-signal-stack {
@@ -2368,6 +2392,10 @@ body.page-what p {
 
   .home-club-line-shift {
     margin-left: min(4.3rem, 16vw);
+  }
+
+  .home-friday {
+    font-size: clamp(1.45rem, 6.8vw, 2.04rem);
   }
 
   .home-signal,
