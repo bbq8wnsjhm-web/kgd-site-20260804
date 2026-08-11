@@ -1451,12 +1451,9 @@ body.page-kto .kto-action-graphite:focus-visible {
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-template-areas:
     "hero hero hero hero hero hero . . home-link home-link home-link home-link"
-    ". . . . . . . . . . . ."
-    "emergence emergence emergence . . . . . place place place place"
-    ". . . . . . . . . . . ."
-    "whole whole whole whole . . . . definition definition definition definition"
-    ". . . . . . share share share share share share";
-  grid-template-rows: auto minmax(4.4rem, 1fr) auto minmax(4rem, 1fr) auto auto;
+    ". . . . . . . . place place place place"
+    "share share share share share share . . definition definition definition definition";
+  grid-template-rows: auto minmax(2rem, 1fr) auto;
   column-gap: clamp(1rem, 1.7vw, 1.5rem);
   row-gap: clamp(1.15rem, 2.3vw, 2.15rem);
   align-items: start;
@@ -1543,7 +1540,7 @@ body.page-kto .kto-action-graphite:focus-visible {
 
 .kto-share {
   grid-area: share;
-  justify-self: end;
+  justify-self: start;
   align-self: end;
   margin: 0;
   max-width: 36rem;
@@ -1558,12 +1555,12 @@ body.page-kto .kto-action-graphite:focus-visible {
 .kto-share-top {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  justify-content: end;
+  justify-content: start;
   column-gap: clamp(1rem, 2.2vw, 2.35rem);
 }
 
 .kto-share-bottom {
-  justify-self: end;
+  justify-self: start;
 }
 
 .kto-editorial-nav {
@@ -2290,9 +2287,8 @@ body.page-what p {
     grid-template-areas:
       "home-link home-link home-link home-link home-link home-link"
       "hero hero hero hero hero hero"
-      "emergence emergence emergence place place place"
-      "whole whole whole definition definition definition"
-      ". . . share share share";
+      "place place place definition definition definition"
+      "share share share . . .";
     grid-template-rows: auto;
     row-gap: 1.7rem;
     padding: 1.5rem;
@@ -2468,9 +2464,7 @@ body.page-what p {
     grid-template-areas:
       "home-link"
       "hero"
-      "emergence"
       "place"
-      "whole"
       "definition"
       "share";
     row-gap: 1.3rem;
