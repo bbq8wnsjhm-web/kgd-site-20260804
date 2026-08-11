@@ -1781,7 +1781,7 @@ body.page-find .cursor-ring.active {
     "headline headline headline headline headline headline . . home-link home-link home-link home-link"
     ". . . . . . . . chat chat chat chat"
     "channel channel channel channel . . . . contact contact contact contact"
-    "when when when when . . . . contact contact contact contact";
+    ". . . . . . . . contact contact contact contact";
   grid-template-rows: auto auto auto auto;
   column-gap: clamp(1rem, 1.7vw, 1.45rem);
   row-gap: clamp(1.2rem, 2.4vw, 2.3rem);
@@ -1812,8 +1812,7 @@ body.page-find .cursor-ring.active {
 }
 
 .find-chat,
-.find-channel,
-.find-when {
+.find-channel {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   column-gap: clamp(0.75rem, 1.4vw, 1.05rem);
@@ -1832,9 +1831,17 @@ body.page-find .cursor-ring.active {
   max-width: 22rem;
 }
 
-.find-when {
-  grid-area: when;
-  max-width: 22rem;
+.find-section-link {
+  color: inherit;
+  text-decoration: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.14em;
+}
+
+.find-section-link:hover,
+.find-section-link:focus-visible {
+  color: #f5f2eb;
+  text-decoration: underline;
 }
 
 .find-mark {
@@ -1909,23 +1916,6 @@ body.page-find .cursor-ring.active {
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 0.14em;
-}
-
-.find-contact-qr {
-  width: clamp(6.6rem, 10vw, 8.4rem);
-  padding: clamp(0.48rem, 0.9vw, 0.7rem);
-  border-radius: 1.35rem;
-  background: rgba(8, 8, 10, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 1.1rem 2.8rem rgba(0, 0, 0, 0.18);
-  backdrop-filter: blur(10px) saturate(118%);
-  -webkit-backdrop-filter: blur(10px) saturate(118%);
-}
-
-.find-contact-qr-image {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 .find-nav {
@@ -2264,8 +2254,7 @@ body.page-what p {
       "home-link home-link home-link home-link home-link home-link"
       "headline headline headline headline headline headline"
       "chat chat chat contact contact contact"
-      "channel channel channel contact contact contact"
-      "when when when when when when";
+      "channel channel channel contact contact contact";
     grid-template-rows: auto;
     row-gap: 1.7rem;
     padding: 1.5rem;
@@ -2287,17 +2276,12 @@ body.page-what p {
     max-width: 17rem;
   }
 
-  .find-channel,
-  .find-when {
+  .find-channel {
     max-width: 19rem;
   }
 
   .find-contact-title {
     font-size: clamp(1.8rem, 4.4vw, 2.4rem);
-  }
-
-  .find-contact-qr {
-    width: clamp(6.1rem, 14vw, 7.4rem);
   }
 
   .kto-editorial-frame {
@@ -2420,7 +2404,6 @@ body.page-what p {
       "headline"
       "chat"
       "channel"
-      "when"
       "contact";
     row-gap: 1.3rem;
     padding: 1.25rem;
@@ -2429,7 +2412,6 @@ body.page-what p {
   .find-manifesto,
   .find-chat,
   .find-channel,
-  .find-when,
   .find-contact,
   .find-nav {
     justify-self: start;
@@ -2452,8 +2434,7 @@ body.page-what p {
   }
 
   .find-chat,
-  .find-channel,
-  .find-when {
+  .find-channel {
     grid-template-columns: auto 1fr;
     column-gap: 0.8rem;
   }
@@ -2470,10 +2451,6 @@ body.page-what p {
 
   .find-contact-link {
     max-width: 100%;
-  }
-
-  .find-contact-qr {
-    width: clamp(5.6rem, 30vw, 6.9rem);
   }
 
   .find-nav {
